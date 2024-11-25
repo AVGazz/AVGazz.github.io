@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avant-Garde Pharma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <img width="90px" src="Pictures\avg_logo.png" alt="AVG Logo">
+        <a  style="font-size: 20px;">Avant-Garde Pharma</a>
+        <ul>
+         
+            <li><a class="list-a" href="index.html">Home</a></li>
+            <li><a class="list-a" href="about.html">About us</a></li>
+            <li><a class="list-a" href="partners.html">Partners</a></li>
+            <li><a class="list-a" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="intro">
+        <video id="introVideo" preload="auto">
+            <source src="Videos\avg_demo2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img class="play-icon" id="playIcon" src="canvas staff/6612880.png" alt="Play Icon">
+    </div>
+
+    <script>
+        const video = document.getElementById('introVideo');
+        const playIcon = document.getElementById('playIcon');
+
+        // Play video when the play icon is clicked
+        playIcon.addEventListener('click', () => {
+            video.style.display = 'block'; // Show the video
+            video.play(); // Play the video
+            video.muted = false; // Ensure the video is not muted
+            playIcon.style.display = 'none'; // Hide the play icon
+        });
+
+        // Show play icon again when the video ends
+        video.addEventListener('ended', () => {
+            playIcon.style.display = 'block'; // Show the play icon
+            video.style.display = 'none'; // Hide the video for replay
+        });
+    </script>
+</body>
+</html>
